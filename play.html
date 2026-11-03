@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Misionář – hráč</title>
+  <link rel="stylesheet" href="play.css">
+</head>
+<body>
+  <header id="bar" class="bar hidden">
+    <span id="me-name"></span>
+    <span id="me-score" class="score">0 b.</span>
+  </header>
+
+  <section id="join" class="view">
+    <h1>Chcete být misionářem?</h1>
+    <form id="join-form">
+      <input id="name-input" maxlength="20" placeholder="Tvoje jméno" autocomplete="off" required>
+      <button type="submit">Hrát</button>
+    </form>
+  </section>
+
+  <section id="wait" class="view hidden">
+    <p id="wait-text" class="big-text">Čekej na začátek hry…</p>
+  </section>
+
+  <section id="play" class="view hidden">
+    <p id="q-number" class="q-number"></p>
+    <p id="q-text" class="question"></p>
+    <div class="answers">
+      <button class="answer" data-index="0"><b>A</b> <span></span></button>
+      <button class="answer" data-index="1"><b>B</b> <span></span></button>
+      <button class="answer" data-index="2"><b>C</b> <span></span></button>
+      <button class="answer" data-index="3"><b>D</b> <span></span></button>
+    </div>
+    <p id="feedback" class="feedback"></p>
+  </section>
+
+  <script type="module" src="player.js"></script>
+</body>
+</html>

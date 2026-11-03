@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chcete být misionářem?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Lobby: QR kód a připojení hráčů -->
+  <section id="lobby-screen" class="screen">
+    <div class="title">
+      <h1 class="logo">Chcete být misionářem?</h1>
+      <p class="prizes-title">Výhry vás čekají na baru</p>
+      <p class="prizes">🥇 1. místo – 3 drinky &nbsp;·&nbsp; 🥈 2. místo – 2 drinky &nbsp;·&nbsp; 🥉 3. místo – 1 drink</p>
+    </div>
+    <div class="lobby">
+      <div class="join">
+        <img id="qr" alt="QR kód pro připojení">
+        <p id="join-url" class="join-url"></p>
+      </div>
+      <div class="players-box">
+        <h2>Hráči (<span id="player-count">0</span>)</h2>
+        <ul id="player-list" class="player-list"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hra -->
+  <section id="game-screen" class="screen">
+    <main class="stage">
+      <div class="top">
+        <p id="answered-count" class="answered-count"></p>
+        <div id="chart" class="chart hidden"></div>
+      </div>
+
+      <div class="row">
+        <div class="hex question-box"><div class="inner" id="question"></div></div>
+      </div>
+
+      <div class="answers">
+        <div class="row"><div class="hex answer" data-index="0"><div class="inner"><b>A:</b> <span class="text"></span><span class="votes"></span></div></div></div>
+        <div class="row"><div class="hex answer" data-index="1"><div class="inner"><b>B:</b> <span class="text"></span><span class="votes"></span></div></div></div>
+        <div class="row"><div class="hex answer" data-index="2"><div class="inner"><b>C:</b> <span class="text"></span><span class="votes"></span></div></div></div>
+        <div class="row"><div class="hex answer" data-index="3"><div class="inner"><b>D:</b> <span class="text"></span><span class="votes"></span></div></div></div>
+      </div>
+    </main>
+
+    <aside class="side">
+      <ol id="ladder" class="ladder"></ol>
+      <h3>Průběžné pořadí</h3>
+      <ol id="top-players" class="top-players"></ol>
+    </aside>
+  </section>
+
+  <!-- Výsledky -->
+  <section id="end-screen" class="screen">
+    <h1 class="logo">Výsledky</h1>
+    <ol id="leaderboard" class="leaderboard"></ol>
+  </section>
+
+  <!-- Ovládání moderátora -->
+  <div class="controls">
+    <button id="reset-btn" class="ctrl" title="Vynulovat body a začít znovu">Nová hra</button>
+    <button id="wipe-btn" class="ctrl" title="Smazat hráče, odpovědi i stav hry">Restart všeho</button>
+    <button id="main-btn" class="ctrl primary"></button>
+  </div>
+
+  <script type="module" src="host.js"></script>
+</body>
+</html>
